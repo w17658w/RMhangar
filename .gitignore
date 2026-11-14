@@ -1,0 +1,51 @@
+# ============================================================
+# STM32 / Keil MDK 工程 .gitignore
+# 目标：只跟踪源码、工程配置、CubeMX 源头；排除一切可再生成的产物
+# ============================================================
+
+# ---------- Keil MDK 编译与链接产物 ----------
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.sct
+*.axf
+*.hex
+*.bin
+*.elf
+*.map
+*.lst
+*.htm
+*_build.log
+
+# ---------- Keil 用户私有配置（窗口布局、断点、调试器设置）----------
+# 含本机用户名与绝对路径，换一台电脑就失效，不属于工程内容
+*.uvguix.*
+*.uvoptx
+*.uvprojx.bak
+*.uvproj.bak
+JLinkLog.txt
+JLinkSettings.ini
+
+# ---------- 构建输出目录 ----------
+# 工程 TargetName 仍为 duoji，产物输出到该子目录
+MDK-ARM/duoji/
+
+# ---------- 编辑器 / IDE 本地配置 ----------
+.vscode/
+.idea/
+*.code-workspace
+
+# ---------- 临时文件与备份 ----------
+*.bak
+*.bak_*
+*.orig
+*~
+*.tmp
+*.log
+
+# ---------- 操作系统垃圾文件 ----------
+Thumbs.db
+desktop.ini
+.DS_Store
