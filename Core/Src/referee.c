@@ -266,18 +266,16 @@ void Referee_RxByte(uint8_t byte)
 
 void Referee_Init(UART_HandleTypeDef *huart)
 {
+    if (huart == 0)
+    {
+        return;
+    }
+
     s_huart  = huart;
     s_len    = 0u;
     s_expect = 0u;
 
-#if (REFEREE_SELFTEST != 0)
-    Referee_SelfTest();                
-#endif
-
-    if (s_huart != 0)
-    {
-        (void)HAL_UART_Receive_IT(s_huart, &s_rx_byte, 1u);
-    }
+    (void)HAL_UART_Receive_IT(s_huart, &s_rx_byte, 1u);
 }
 
 void Referee_OnRxCplt(void)

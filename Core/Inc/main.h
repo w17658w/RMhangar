@@ -46,10 +46,11 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+/* 舱门动作位置与行程参数（业务层使用） */
+#define HANGAR_DOOR_CLOSE_POS   1000u   /* 关严位置，脉宽 us（500=0° / 1500=90° / 2500=180°） */
+#define HANGAR_DOOR_OPEN_POS    2000u   /* 全开位置，脉宽 us */
+#define HANGAR_DOOR_TIME_MS      500u   /* 单次开关行程时长，走软件插值 */
 /* USER CODE END EM */
-
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
